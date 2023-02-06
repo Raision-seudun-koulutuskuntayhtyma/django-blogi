@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Koodausblogi</title>
+    </head>
+    <body>
+        <h1>Koodausblogi - Postaukset</h1>
+        <ul>
+            {% for postaus in postaukset %}
+                <li><a href="/postaus/1">{{postaus}}</a></li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
