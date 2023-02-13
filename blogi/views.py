@@ -20,4 +20,12 @@ def nayta_postaus(request, id):
 
 
 def uusi_postaus(request):
+    if request.method == "POST":
+        otsikko = request.POST['otsikko']
+        teksti = request.POST['teksti']
+        postaus = Postaus.objects.create(
+            otsikko=otsikko,
+            teksti=teksti,
+        )
+
     return render(request, "blogi/uusi_postaus.html")
