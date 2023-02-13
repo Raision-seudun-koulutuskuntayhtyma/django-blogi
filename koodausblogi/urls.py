@@ -21,7 +21,7 @@ from blogi import views as blogi_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('postaukset/',
+    path('',
          blogi_views.postaukset,
          name="postauslista"),
     path('postaus/<int:id>',
