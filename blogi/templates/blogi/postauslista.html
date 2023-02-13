@@ -6,7 +6,11 @@
         <h1>Koodausblogi - Postaukset</h1>
         <ul>
             {% for postaus in postaukset %}
-                <li><a href="/postaus/1">{{postaus}}</a></li>
+            <li>
+                <a href="{% url 'nayta_postaus' postaus.id %}">
+                    {{postaus}}
+                </a>
+            </li>
             {% endfor %}
         </ul>
     </body>
