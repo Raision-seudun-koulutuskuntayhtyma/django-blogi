@@ -4,6 +4,7 @@
     </head>
     <body>
         <h1>Koodausblogi - Postaukset</h1>
+        <a href="{% url 'admin:index' %}">Django Admin</a>
         <ul>
             {% for postaus in postaukset %}
             <li>
