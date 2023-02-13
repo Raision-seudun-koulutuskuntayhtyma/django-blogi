@@ -27,4 +27,6 @@ urlpatterns = [
     path('postaus/<int:id>',
          blogi_views.nayta_postaus,
          name="nayta_postaus"),
+    path('uusi/', blogi_views.uusi_postaus,
+         name="uusi_postaus"),
 ]
