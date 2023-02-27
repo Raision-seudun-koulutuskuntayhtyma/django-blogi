@@ -2,19 +2,23 @@
 
 {% block content %}
 <h1>Uusi postaus</h1>
-<a href="{% url 'postauslista' %}">Postaukset</a>
+
 <form method="post">
     {% csrf_token %}
-    <label>
-        Otsikko
-        <input name="otsikko"/>
-    </label>
-    <br/>
-    <label>
-        Teksti
-        <textarea name="teksti"></textarea>
-    </label>
-    <br/>
-    <button type="submit">Lähetä</button>
+    <div class="row">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <div class="form-floating mb-3">
+                <input class="form-control" id="otsikko" name="otsikko" placeholder="">
+                <label for="otsikko" class="form-label">Otsikko</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <textarea class="form-control" id="teksti" name="teksti"
+                 placeholder="" style="height: 10em"></textarea>
+                <label for="teksti" class="form-label">Teksti</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Lähetä</button>
+        </div>
+    </div>
 </form>
 {% endblock %}
