@@ -51,11 +51,7 @@
             </div>
         </nav>
         <div class="container">
-            <h1>Koodausblogi - Postaukset</h1>
-            <a href="{% url 'admin:index' %}">Django Admin</a>
-            <br/>
-            <a href="{% url 'uusi_postaus' %}">Uusi postaus</a>        
-            <hr/>
+            <h1>Postaukset</h1>
             <ul>
                 {% for postaus in postaukset %}
                 <li>
