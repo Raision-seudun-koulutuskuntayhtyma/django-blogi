@@ -1,23 +1,20 @@
-<html>
-    <head>
-        <title>Koodausblogi</title>
-    </head>
-    <body>
-        <h1>Koodausblogi - Uusi postaus</h1>
-        <a href="{% url 'postauslista' %}">Postaukset</a>
-        <form method="post">
-            {% csrf_token %}
-            <label>
-                Otsikko
-                <input name="otsikko"/>
-            </label>
-            <br/>
-            <label>
-                Teksti
-                <textarea name="teksti"></textarea>
-            </label>
-            <br/>
-            <button type="submit">Lähetä</button>
-        </form>
-    </body>
-</html>
+{% extends "blogi/base.html" %}
+
+{% block content %}
+<h1>Uusi postaus</h1>
+<a href="{% url 'postauslista' %}">Postaukset</a>
+<form method="post">
+    {% csrf_token %}
+    <label>
+        Otsikko
+        <input name="otsikko"/>
+    </label>
+    <br/>
+    <label>
+        Teksti
+        <textarea name="teksti"></textarea>
+    </label>
+    <br/>
+    <button type="submit">Lähetä</button>
+</form>
+{% endblock %}
