@@ -1,13 +1,8 @@
-<html>
-    <head>
-        <title>Koodausblogi</title>
-    </head>
-    <body>
-        <h1>Koodausblogi - Postaus</h1>
-        <h2>{{postaus.otsikko}}</h2>
-        <p>
-            {{postaus.teksti}}
-        </p>
-        <a href="{% url 'postauslista' %}">Postaukset</a>
-    </body>
-</html>
+{% extends "blogi/base.html" %}
+
+{% block content %}
+<h1>{{postaus.otsikko}}</h1>
+<p>
+    {{postaus.teksti}}
+</p>
+{% endblock %}
