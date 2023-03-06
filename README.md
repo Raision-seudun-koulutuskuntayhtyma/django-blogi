@@ -1,5 +1,7 @@
-# django-harjoitus-2023-01
-Django-harjoittelua 2023-01
+# Django-harjoitus 2023 tammi-maaliskuu
+
+Tässä repositoryssä on Django-harjoitteluprojekti, jota on koodattu
+alkuvuodesta 2023.
 
 ## Asennus
 
