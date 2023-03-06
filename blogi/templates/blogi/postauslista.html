@@ -15,7 +15,7 @@
             {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{postaus.otsikko}}</h5>
-                <p class="card-text">{{postaus.teksti}}</p>
+                <p class="card-text">{{postaus.luo_ingressi}}</p>
                 <a href="{% url 'nayta_postaus' postaus.id %}"
                    class="btn btn-primary">Lue</a>
             </div>
