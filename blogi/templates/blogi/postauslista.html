@@ -11,15 +11,26 @@
    
             <a href="{% url 'nayta_postaus' postaus.id %}">
                 {% if postaus.kuva %}
-                <img src="{{postaus.kuva.url}}" class="card-img-top" alt="">
+                <img src="{{postaus.kuva.url}}"
+                     class="card-img-top" alt=""
+                     style="width: 100%; height: 12em; object-fit: cover;">
                 {% else %}
                 <img src="{% static 'blogi/ei-kuvaa.svg' %}"
-                     class="card-img-top" alt="">
+                     class="card-img-top" alt=""
+                     style="width: 100%; height: 12em; object-fit: cover;">
                 {% endif %}
             </a>
             <div class="card-body">
-                <h5 class="card-title">{{postaus.otsikko}}</h5>
-                <p class="card-text">{{postaus.luo_ingressi}}</p>
+                <h5 class="card-title"
+                    style="white-space: nowrap;
+                           overflow: hidden;
+                           text-overflow: ellipsis;"
+                >{{postaus.otsikko}}</h5>
+                <p class="card-text"
+                   style="height: 8em;
+                          overflow: scroll;
+                          text-overflow: ellipsis;"
+                >{{postaus.luo_ingressi}}</p>
                 <a href="{% url 'nayta_postaus' postaus.id %}"
                    class="btn btn-primary">Lue</a>
             </div>
