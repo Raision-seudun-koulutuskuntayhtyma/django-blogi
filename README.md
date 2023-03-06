@@ -50,3 +50,8 @@ muutosten pohjalta voi luoda uuden migraatiotiedoston komennolla:
 ```sh
 python manage.py makemigrations
 ```
+
+Muista myös ajaa luodut migraatiotiedostot komennolla:
+```sh
+python manage.py migrate
+```
