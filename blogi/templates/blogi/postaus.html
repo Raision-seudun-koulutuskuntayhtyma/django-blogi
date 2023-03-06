@@ -12,7 +12,7 @@
 
 {# Lisää sivulle <img>-tagi kuvaa varten, jos postauksella on kuva #}
 {% if postaus.kuva %}
-<img src="{{postaus.kuva.url}}"/>
+<img src="{{postaus.kuva.url}}" class="img-fluid"/>
 {% endif %}
 
 {% endblock %}
