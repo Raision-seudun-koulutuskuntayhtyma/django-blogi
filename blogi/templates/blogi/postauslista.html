@@ -1,4 +1,5 @@
 {% extends "blogi/base.html" %}
+{% load static %}
 
 {% block content %}
 <h1>Postaukset</h1>
@@ -8,11 +9,14 @@
     <div class="col">
         <div class="card">
    
-            {% if postaus.kuva %}
             <a href="{% url 'nayta_postaus' postaus.id %}">
+                {% if postaus.kuva %}
                 <img src="{{postaus.kuva.url}}" class="card-img-top" alt="">
+                {% else %}
+                <img src="{% static '/blogi/ei-kuvaa.svg' %}"
+                     class="card-img-top" alt="">
+                {% endif %}
             </a>
-            {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{postaus.otsikko}}</h5>
                 <p class="card-text">{{postaus.luo_ingressi}}</p>
