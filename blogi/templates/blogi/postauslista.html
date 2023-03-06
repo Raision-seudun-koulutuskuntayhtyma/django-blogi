@@ -2,17 +2,26 @@
 
 {% block content %}
 <h1>Postaukset</h1>
-<ul>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
     {% for postaus in postaukset %}
-    <li>
-        <a href="{% url 'nayta_postaus' postaus.id %}">
+    <div class="col">
+        <div class="card">
+   
             {% if postaus.kuva %}
-            <img src="{{postaus.kuva.url}}" width="50"
-                 class="img-thumbnail"/>
+            <a href="{% url 'nayta_postaus' postaus.id %}">
+                <img src="{{postaus.kuva.url}}" class="card-img-top" alt="">
+            </a>
             {% endif %}
-            {{postaus}}
-        </a>
-    </li>
+            <div class="card-body">
+                <h5 class="card-title">{{postaus.otsikko}}</h5>
+                <p class="card-text">{{postaus.teksti}}</p>
+                <a href="{% url 'nayta_postaus' postaus.id %}"
+                   class="btn btn-primary">Lue</a>
+            </div>
+        </div>
+    </div>
     {% endfor %}
-</ul>
+</div>
+
 {% endblock %}
