@@ -1,8 +1,18 @@
 {% extends "blogi/base.html" %}
 
 {% block content %}
+
+{# Postauksen otsikko laitetaan <h1>-tagiin #}
 <h1>{{postaus.otsikko}}</h1>
+
+{# Postauksen sisältö (teksti-kentästä) laitetaan <p>-tagin sisälle #}
 <p>
     {{postaus.teksti}}
 </p>
+
+{# Lisää sivulle <img>-tagi kuvaa varten, jos postauksella on kuva #}
+{% if postaus.kuva %}
+<img src="{{postaus.kuva.url}}"/>
+{% endif %}
+
 {% endblock %}
