@@ -130,3 +130,6 @@ dmypy.json
 
 # media-kansio ja sen sisältö
 /media
+
+# staticfiles-kansio ja sen sisältö
+/staticfiles
