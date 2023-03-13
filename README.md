@@ -1,7 +1,7 @@
-# Django-harjoitus 2023 tammi-maaliskuu
+# Djangolla tehty blogiharjoitus
 
-Tässä repositoryssä on Django-harjoitteluprojekti, jota on koodattu
-alkuvuodesta 2023.
+Tässä repositoryssä on Djangolla tehty blogi.  Kyseessä on harjoitteluprojekti,
+jota on koodattu alkuvuodesta 2023.
 
 ## Asennus
 
