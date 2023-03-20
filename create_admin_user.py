@@ -16,7 +16,7 @@ def main():
     users = get_user_model().objects
 
     if users.filter(username=username).exists():
-        print(f"User {username!r} already exists")
+        print(f"Skipping creation of superuser as {username!r} already exists")
         return
 
     if not password:
