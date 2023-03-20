@@ -129,6 +129,20 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# Käytä DropBoxia tiedostojen tallentamiseen jos DROPBOX_APP_KEY on asetettu
+DROPBOX_APP_KEY = os.environ.get('DROPBOX_APP_KEY')
+if DROPBOX_APP_KEY:
+    # Loput DropBox-muuttujat haetaan os.environ:sta hakasuluilla [],
+    # jotta niiden puuttuminen aiheuttaisi virheen hyvin aikaisessa
+    # vaiheessa.  Jos käytettäisiin .get():iä, niin virhettä ei tulisi
+    # vielä tässä, mutta vasta silloin, kun DropBoxia yritettäisiin
+    # käyttää.
+    DROPBOX_APP_SECRET = os.environ['DROPBOX_APP_SECRET']
+    DROPBOX_OAUTH2_TOKEN = os.environ['DROPBOX_OAUTH2_TOKEN']
+    DROPBOX_OAUTH2_REFRESH_TOKEN = os.environ['DROPBOX_OAUTH2_REFRESH_TOKEN']
+    # Aseta DropBox Djangon oletus-storageksi
+    DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
