@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class Postaus(models.Model):
@@ -7,6 +8,10 @@ class Postaus(models.Model):
     teksti = models.TextField()
     kuva = models.ImageField(upload_to="blogi/kuvat", null=True, blank=True)
     luotu = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = _("postaus")
+        verbose_name_plural = _("postaukset")
 
     def __str__(self):
         return self.otsikko
